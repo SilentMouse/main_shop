@@ -1,0 +1,2 @@
+class MediaProduct < ApplicationRecord
+end

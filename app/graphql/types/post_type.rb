@@ -3,6 +3,6 @@ module Types
     field :id, Integer, null: true
     field :title, String, null: true
     field :rating, Integer, null: true
-    # field :comments, [Types::CommentType], null: true
+    field :comments, [Types::CommentType], null: true
   end
 end
