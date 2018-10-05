@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_161006) do
+ActiveRecord::Schema.define(version: 2018_10_05_060745) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2018_10_04_161006) do
   create_table "media", force: :cascade do |t|
     t.string "picture"
     t.string "video"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "media_posts", force: :cascade do |t|
+    t.integer "media_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +45,10 @@ ActiveRecord::Schema.define(version: 2018_10_04_161006) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "author"
+    t.text "content"
+    t.integer "comments_count"
+    t.string "annotation"
   end
 
   create_table "products", force: :cascade do |t|
