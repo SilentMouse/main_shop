@@ -7,6 +7,7 @@ module Types
     field :discount, Float, null: true
     field :rating, Integer, null: true
     field :popular, Integer, null: true
+    field :properties, String, null: true
     field :media, [Types::MediaType], null: true
   end
 end
