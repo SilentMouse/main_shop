@@ -21,5 +21,13 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  host: localhost
+  pool: 500
+  timeout: 5000
+  database: fornow
+  username: rbdev
+
+#production:
+#  <<: *default
+#  database: db/production.sqlite3
