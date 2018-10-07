@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "main_shop"
-set :repo_url, "git@github.com:Solver-Club/main_shop.git"
+set :repo_url, "git@github.com:SilentMouse/main_shop.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
