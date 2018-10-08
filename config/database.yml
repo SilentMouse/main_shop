@@ -27,6 +27,7 @@ production:
   timeout: 5000
   database: fornow
   username: rbdev
+  password: hu8jmn3
 
 #production:
 #  <<: *default
