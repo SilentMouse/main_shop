@@ -20,8 +20,6 @@ install_plugin Capistrano::SCM::Git
 
 require 'capistrano/puma'
 install_plugin Capistrano::Puma # Default puma tasks
-install_plugin Capistrano::Puma::Workers  # if you want to control the workers (in cluster mode)
-install_plugin Capistrano::Puma::Monit , load_hooks: false # if you need the monit tasks
 
 # Include tasks from other gems included in your Gemfile
 #
