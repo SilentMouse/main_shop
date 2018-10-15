@@ -10,5 +10,6 @@ module Types
     field :comments, [Types::CommentType], null: true
     field :media, [Types::MediaType], null: true
     field :created_at, String, null: true
+    
   end
 end

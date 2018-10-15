@@ -10,7 +10,7 @@ set :repo_url, "git@github.com:SilentMouse/main_shop.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/rbdev/main_shop'
 
-set :puma_restart_command, '~/.rvm/bin/rvm default do bundle exec pumactl -S /home/rbdev/fornow/shared/tmp/pids/puma.state -F /home/rbdev/fornow/shared/puma.rb restart'
+set :puma_restart_command, '~/.rvm/bin/rvm default do bundle exec puma'
 
 set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('config/thin','bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system','public/uploads')

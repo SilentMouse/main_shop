@@ -19,7 +19,7 @@ install_plugin Capistrano::SCM::Git
 
 
 require 'capistrano/puma'
-install_plugin Capistrano::Puma # Default puma tasks
+install_plugin Capistrano::Puma, load_hooks: false
 
 # Include tasks from other gems included in your Gemfile
 #
