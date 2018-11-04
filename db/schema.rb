@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_05_060745) do
+ActiveRecord::Schema.define(version: 2018_11_04_095348) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "medium_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_products", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id"
@@ -24,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_10_05_060745) do
     t.string "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "media_posts", force: :cascade do |t|
@@ -61,6 +76,7 @@ ActiveRecord::Schema.define(version: 2018_10_05_060745) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "properties"
+    t.string "composition"
   end
 
   create_table "properties", force: :cascade do |t|

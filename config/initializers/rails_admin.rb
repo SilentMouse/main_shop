@@ -43,6 +43,7 @@ RailsAdmin.config do |config|
   config.model Medium do
     edit do
       field :picture, :carrierwave
+      field :name, :string
     end
   end
 

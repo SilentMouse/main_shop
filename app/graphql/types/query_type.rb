@@ -26,6 +26,12 @@ module Types
       description "find all products"
       argument :limit, Integer, required: false, default_value: 9
       argument :offset, Integer, required: false, default_value: 0
+      argument :order, String, required: false, default_value: nil
+      argument :category, Integer, required: false, default_value: nil
+    end
+
+    field :categories, [CategoryType], null: true do
+      description "find all category"
     end
 
     field :product, ProductType, null: true do
@@ -46,8 +52,27 @@ module Types
       Product.find(id)
     end
 
-    def products(limit:,offset:)
-        Product.all.limit(limit).offset(offset)
+    def products(limit:,offset:,order:,category:)
+      @products = Product.all
+
+      if category
+        @products = Category.find(category).products
+      end
+
+      if order
+        if order == "price"
+          @products = @products.order("price DESC")
+        end
+        if order == "date"
+          @products = @products.order("created_at DESC")
+        end
+      end
+
+      @products.limit(limit).offset(offset)
+    end
+
+    def categories
+      Category.all
     end
 
   end

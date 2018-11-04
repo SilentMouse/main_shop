@@ -9,5 +9,6 @@ module Types
     field :popular, Integer, null: true
     field :properties, String, null: true
     field :media, [Types::MediaType], null: true
+    field :composition, String, null: true
   end
 end
